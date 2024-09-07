@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 31, 2024 at 06:37 AM
+-- Generation Time: Sep 07, 2024 at 06:22 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -37,32 +37,32 @@ CREATE TABLE `course` (
   `credit` varchar(255) NOT NULL,
   `semster` int(11) NOT NULL,
   `student_year` varchar(11) NOT NULL,
-  `major_ID` varchar(255) NOT NULL,
-  `data_curriculum_ID` varchar(255) NOT NULL
+  `data_curriculum_ID` varchar(255) NOT NULL,
+  `major_ID` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `course`
 --
 
-INSERT INTO `course` (`course_ID`, `name_TH`, `name_EN`, `year`, `credit`, `semster`, `student_year`, `major_ID`, `data_curriculum_ID`) VALUES
-('227101', 'พื้นฐานการแก้ปัญหาและการเขียนโปรแกรม', 'Fundamental of Problem Solving and Programming', '2565', '3(2-2-5)', 1, '1', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227102', 'โครงสร้างข้อมูล', 'Data Structure', '2565', '3(2-2-5)', 2, '1', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227141', 'ความต้องการซอฟต์แวร์', 'Software Requirements', '2565', '3(2-2-5)', 1, '1', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227151', 'การออกแบบประสบการณ์ผู้ใช้และส่วนต่อประสานกับผู้ใช้', 'User experience and user interface design', '2565', '3(2-2-5)', 2, '1', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227201', 'หลักการเขียนโปรแกรมเชิงวัตถุ', 'Principles of Object-oriented Programming', '2565', '3(2-2-5)', 1, '2', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227202', 'พื้นฐานของระบบฐานข้อมูล', 'Fundamental of Database System', '2565', '3(2-2-5)', 1, '2', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227203', 'องค์ประกอบคอมพิวเตอร์และระบบปฏิบัติการ', 'Computer Organization and Operating Systems', '2565', '3(2-2-5)', 2, '2', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227211', 'แนวคิดของอัลกอริทึม', 'Concepts of Algorithms', '2565', '3(2-2-5)', 2, '2', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227221', 'การพัฒนาซอฟต์แวร์ส่วนหน้า', 'Front-End Software Development', '2565', '3(2-2-5)', 1, '2', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227223', 'การพัฒนาซอฟต์แวร์ส่วนหลัง', 'Back-End Software Development', '2565', '3(2-2-5)', 2, '2', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227271', 'กระบวนการซอฟต์แวร์', 'Software Processes', '2565', '3(2-2-5)', 2, '2', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227302', 'การดำเนินงานการพัฒนาซอฟต์แวร์', 'Software Development Operation', '2565', '3(2-2-5)', 1, '3', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227322', 'การเตรียมพร้อมฝึกประสบการณ์วิชาชีพวิศวกรรมซอฟต์แวร์', 'Preparation for Software Engineering Professional Experience', '2565', '3(2-2-5)', 2, '3', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227332', 'พื้นฐานปัญญาประดิษฐ์', 'Fundamental of Artificial Intelligence', '2565', '3(2-2-5)', 2, '3', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227361', 'การทดสอบซอฟต์แวร์', 'Software Testing', '2565', '3(2-2-5)', 1, '3', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227381', 'การจัดการโครงการซอฟต์แวร์', 'Software Project Management', '2565', '3(2-2-5)', 2, '3', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7'),
-('227422', 'โครงงานทางวิศวกรรมซอฟต์แวร์', 'Software Engineering Project', '2565', '3(0-6-3)', 1, '4', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', '58c72864-de72-47af-ac6a-9201746717c7');
+INSERT INTO `course` (`course_ID`, `name_TH`, `name_EN`, `year`, `credit`, `semster`, `student_year`, `data_curriculum_ID`, `major_ID`) VALUES
+('227101', 'พื้นฐานการแก้ปัญหาและการเขียนโปรแกรม', 'Fundamental of Problem Solving and Programming', '2565', '3(2-2-5)', 1, '1', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227102', 'โครงสร้างข้อมูล', 'Data Structure', '2565', '3(2-2-5)', 2, '1', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227141', 'ความต้องการซอฟต์แวร์', 'Software Requirements', '2565', '3(2-2-5)', 1, '1', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227151', 'การออกแบบประสบการณ์ผู้ใช้และส่วนต่อประสานกับผู้ใช้', 'User experience and user interface design', '2565', '3(2-2-5)', 2, '1', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227201', 'หลักการเขียนโปรแกรมเชิงวัตถุ', 'Principles of Object-oriented Programming', '2565', '3(2-2-5)', 1, '2', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227202', 'พื้นฐานของระบบฐานข้อมูล', 'Fundamental of Database System', '2565', '3(2-2-5)', 1, '2', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227203', 'องค์ประกอบคอมพิวเตอร์และระบบปฏิบัติการ', 'Computer Organization and Operating Systems', '2565', '3(2-2-5)', 2, '2', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227211', 'แนวคิดของอัลกอริทึม', 'Concepts of Algorithms', '2565', '3(2-2-5)', 2, '2', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227221', 'การพัฒนาซอฟต์แวร์ส่วนหน้า', 'Front-End Software Development', '2565', '3(2-2-5)', 1, '2', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227223', 'การพัฒนาซอฟต์แวร์ส่วนหลัง', 'Back-End Software Development', '2565', '3(2-2-5)', 2, '2', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227271', 'กระบวนการซอฟต์แวร์', 'Software Processes', '2565', '3(2-2-5)', 2, '2', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227302', 'การดำเนินงานการพัฒนาซอฟต์แวร์', 'Software Development Operation', '2565', '3(2-2-5)', 1, '3', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227322', 'การเตรียมพร้อมฝึกประสบการณ์วิชาชีพวิศวกรรมซอฟต์แวร์', 'Preparation for Software Engineering Professional Experience', '2565', '3(2-2-5)', 2, '3', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227332', 'พื้นฐานปัญญาประดิษฐ์', 'Fundamental of Artificial Intelligence', '2565', '3(2-2-5)', 2, '3', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227361', 'การทดสอบซอฟต์แวร์', 'Software Testing', '2565', '3(2-2-5)', 1, '3', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227381', 'การจัดการโครงการซอฟต์แวร์', 'Software Project Management', '2565', '3(2-2-5)', 2, '3', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('227422', 'โครงงานทางวิศวกรรมซอฟต์แวร์', 'Software Engineering Project', '2565', '3(0-6-3)', 1, '4', '58c72864-de72-47af-ac6a-9201746717c7', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef');
 
 -- --------------------------------------------------------
 
@@ -73,16 +73,15 @@ INSERT INTO `course` (`course_ID`, `name_TH`, `name_EN`, `year`, `credit`, `sems
 CREATE TABLE `data_curriculum` (
   `data_curriculum_ID` varchar(255) NOT NULL,
   `curriculum_year` varchar(255) NOT NULL,
-  `isActive` tinyint(1) NOT NULL,
-  `major_ID` varchar(255) NOT NULL
+  `isActive` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `data_curriculum`
 --
 
-INSERT INTO `data_curriculum` (`data_curriculum_ID`, `curriculum_year`, `isActive`, `major_ID`) VALUES
-('58c72864-de72-47af-ac6a-9201746717c7', '2565', 1, 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef');
+INSERT INTO `data_curriculum` (`data_curriculum_ID`, `curriculum_year`, `isActive`) VALUES
+('58c72864-de72-47af-ac6a-9201746717c7', '2565', 1);
 
 -- --------------------------------------------------------
 
@@ -93,15 +92,17 @@ INSERT INTO `data_curriculum` (`data_curriculum_ID`, `curriculum_year`, `isActiv
 CREATE TABLE `major` (
   `major_ID` varchar(255) NOT NULL,
   `name` varchar(255) NOT NULL,
-  `curriculum_name` varchar(255) NOT NULL
+  `curriculum_name` varchar(255) NOT NULL,
+  `data_curriculum_ID` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `major`
 --
 
-INSERT INTO `major` (`major_ID`, `name`, `curriculum_name`) VALUES
-('f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', 'วิศวกรรมซอฟต์แวร์', 'หลักสูตรวิศวกรรมศาสตรบัณฑิต สาขาวิชาวิศวกรรมซอฟต์แวร์');
+INSERT INTO `major` (`major_ID`, `name`, `curriculum_name`, `data_curriculum_ID`) VALUES
+('81b5235b-1710-4665-accb-89b87aee4213', 'คอมพิวเตอร์ธุรกิจ', 'หลักสูตรบริหารธุรกิจบัณฑิต สาขาวิชาคอมพิวเตอร์ธุรกิจ', '58c72864-de72-47af-ac6a-9201746717c7'),
+('f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef', 'วิศวกรรมซอฟต์แวร์', 'หลักสูตรวิศวกรรมศาสตรบัณฑิต สาขาวิชาวิศวกรรมซอฟต์แวร์', '58c72864-de72-47af-ac6a-9201746717c7');
 
 -- --------------------------------------------------------
 
@@ -138,6 +139,8 @@ CREATE TABLE `professor` (
   `password` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `isCourseLeader` tinyint(1) NOT NULL,
+  `profile_image` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
   `major_ID` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -145,10 +148,10 @@ CREATE TABLE `professor` (
 -- Dumping data for table `professor`
 --
 
-INSERT INTO `professor` (`professor_ID`, `prefix`, `firstname`, `lastname`, `username`, `password`, `email`, `isCourseLeader`, `major_ID`) VALUES
-('52d077dc-6226-4cc0-897c-e7763ded5a56', 'นาย', 'ชินพัฒน์', 'ทรัพย์สำเริง', 'pech', '$2a$10$CI9VHoi0zrrYHgJUtSK.HeN9.jpZ5NGreh/V1RrvDwHOVO2bzsGuu', 'pech@gmail.com', 0, 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
-('6cfa0c00-b457-4fa4-85f8-58233c52be11', 'นางสาว', 'สุมิตตา', 'กิตติชัยฤทธิ์', 'guitar', '$2a$10$uu3LVkGvTv8DRqdHewPDF.k4J.gCO9HRuKjHa4z.niWKXebQk8q6u', 'guitar@gmail.com', 0, 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
-('bb3a51c9-4d29-4612-b196-e5b04ca2fb59', 'นาย', 'เกษมสันต์', 'แก้วจีน', 'kasaje', '$2a$10$BcJy1cQNXgG53JexfWbbUOK5HyrPppYlKCNFVus8NX.jzQEWLHpGu', 'kasaje@gmail.com', 1, 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef');
+INSERT INTO `professor` (`professor_ID`, `prefix`, `firstname`, `lastname`, `username`, `password`, `email`, `isCourseLeader`, `profile_image`, `phone`, `major_ID`) VALUES
+('18561cf9-5904-41c8-ab4a-0de2e5ddc3db', 'นาย', 'เกษมสันต์', 'แก้วจีน', 'kasaje', '$2a$10$87KhfUaw6FEWNvSlN9m50OxMdmKnKY6bHMbXOWPBIlI9o5GxoNigK', 'kasaje@gmail.com', 1, 'file-1725726104179.jpg', '0973245214', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('2939b9ca-abdf-4221-a613-6f0e969ce215', 'นาย', 'ชินพัฒน์', 'ทรัพย์สำเริง', 'pech', '$2a$10$eP5E281veXIx//Mnca/ixeeK1JOCEKnfKGAXDwcWWLreR8XdrR/hW', 'pech@gmail.com', 0, '', '', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('757658f2-b954-4699-be4d-2ed4a7f28a54', 'นางสาว ', 'สุมิตตา', 'กิตติชัยฤทธิ์ ', 'guitar', '$2a$10$W/R2vOvUP.vtfsK8QPcQN.7aA0qWMb4ixRhucyf.qqw5y3pB3XR9.', 'guitar@gmail.com', 0, '', '', '81b5235b-1710-4665-accb-89b87aee4213');
 
 --
 -- Indexes for dumped tables
@@ -159,21 +162,21 @@ INSERT INTO `professor` (`professor_ID`, `prefix`, `firstname`, `lastname`, `use
 --
 ALTER TABLE `course`
   ADD PRIMARY KEY (`course_ID`),
-  ADD KEY `major_ID` (`major_ID`),
-  ADD KEY `data_curriculum_ID` (`data_curriculum_ID`);
+  ADD KEY `data_curriculum_ID` (`data_curriculum_ID`),
+  ADD KEY `major_ID` (`major_ID`);
 
 --
 -- Indexes for table `data_curriculum`
 --
 ALTER TABLE `data_curriculum`
-  ADD PRIMARY KEY (`data_curriculum_ID`),
-  ADD KEY `major_ID` (`major_ID`);
+  ADD PRIMARY KEY (`data_curriculum_ID`);
 
 --
 -- Indexes for table `major`
 --
 ALTER TABLE `major`
-  ADD PRIMARY KEY (`major_ID`);
+  ADD PRIMARY KEY (`major_ID`),
+  ADD KEY `data_curriculum_ID` (`data_curriculum_ID`);
 
 --
 -- Indexes for table `opencourse`
@@ -198,14 +201,14 @@ ALTER TABLE `professor`
 -- Constraints for table `course`
 --
 ALTER TABLE `course`
-  ADD CONSTRAINT `course_ibfk_1` FOREIGN KEY (`major_ID`) REFERENCES `major` (`major_ID`),
-  ADD CONSTRAINT `course_ibfk_2` FOREIGN KEY (`data_curriculum_ID`) REFERENCES `data_curriculum` (`data_curriculum_ID`) ON DELETE CASCADE;
+  ADD CONSTRAINT `course_ibfk_1` FOREIGN KEY (`data_curriculum_ID`) REFERENCES `data_curriculum` (`data_curriculum_ID`),
+  ADD CONSTRAINT `course_ibfk_2` FOREIGN KEY (`major_ID`) REFERENCES `major` (`major_ID`);
 
 --
--- Constraints for table `data_curriculum`
+-- Constraints for table `major`
 --
-ALTER TABLE `data_curriculum`
-  ADD CONSTRAINT `data_curriculum_ibfk_1` FOREIGN KEY (`major_ID`) REFERENCES `major` (`major_ID`) ON DELETE CASCADE;
+ALTER TABLE `major`
+  ADD CONSTRAINT `major_ibfk_1` FOREIGN KEY (`data_curriculum_ID`) REFERENCES `data_curriculum` (`data_curriculum_ID`);
 
 --
 -- Constraints for table `opencourse`
