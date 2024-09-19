@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 07, 2024 at 06:22 PM
+-- Generation Time: Sep 19, 2024 at 01:45 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.0.30
 
@@ -149,9 +149,26 @@ CREATE TABLE `professor` (
 --
 
 INSERT INTO `professor` (`professor_ID`, `prefix`, `firstname`, `lastname`, `username`, `password`, `email`, `isCourseLeader`, `profile_image`, `phone`, `major_ID`) VALUES
-('18561cf9-5904-41c8-ab4a-0de2e5ddc3db', 'นาย', 'เกษมสันต์', 'แก้วจีน', 'kasaje', '$2a$10$87KhfUaw6FEWNvSlN9m50OxMdmKnKY6bHMbXOWPBIlI9o5GxoNigK', 'kasaje@gmail.com', 1, 'file-1725726104179.jpg', '0973245214', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
-('2939b9ca-abdf-4221-a613-6f0e969ce215', 'นาย', 'ชินพัฒน์', 'ทรัพย์สำเริง', 'pech', '$2a$10$eP5E281veXIx//Mnca/ixeeK1JOCEKnfKGAXDwcWWLreR8XdrR/hW', 'pech@gmail.com', 0, '', '', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
-('757658f2-b954-4699-be4d-2ed4a7f28a54', 'นางสาว ', 'สุมิตตา', 'กิตติชัยฤทธิ์ ', 'guitar', '$2a$10$W/R2vOvUP.vtfsK8QPcQN.7aA0qWMb4ixRhucyf.qqw5y3pB3XR9.', 'guitar@gmail.com', 0, '', '', '81b5235b-1710-4665-accb-89b87aee4213');
+('18561cf9-5904-41c8-ab4a-0de2e5ddc3db', 'นาย', 'เกษมสันต์', 'แก้วจีน', 'kasaje', '$2b$10$iF107m2Us2IHVJO8wOI.S.kQ00t7nQ6lcC0bTLaVMbkHZ4GRVPAr2', 'kasaje@gmail.com', 1, 'file-1725728332177.png', '0979234192', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('2939b9ca-abdf-4221-a613-6f0e969ce215', 'นาย', 'ชินพัฒน์', 'ทรัพย์สำเริง', 'pech', '$2a$10$eP5E281veXIx//Mnca/ixeeK1JOCEKnfKGAXDwcWWLreR8XdrR/hW', 'pech@gmail.com', 0, 'file-1725728257328.png', '0987654324', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('757658f2-b954-4699-be4d-2ed4a7f28a54', 'นางสาว ', 'สุมิตตา', 'กิตติชัยฤทธิ์ ', 'guitar', '$2a$10$W/R2vOvUP.vtfsK8QPcQN.7aA0qWMb4ixRhucyf.qqw5y3pB3XR9.', 'guitar@gmail.com', 0, 'file-1725728557796.png', '', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `staff`
+--
+
+CREATE TABLE `staff` (
+  `staff_ID` varchar(255) NOT NULL,
+  `prefix` varchar(255) DEFAULT NULL,
+  `firstname` varchar(255) DEFAULT NULL,
+  `lastname` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `profile_image` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Indexes for dumped tables
@@ -192,6 +209,12 @@ ALTER TABLE `opencourse`
 ALTER TABLE `professor`
   ADD PRIMARY KEY (`professor_ID`),
   ADD KEY `major_ID` (`major_ID`);
+
+--
+-- Indexes for table `staff`
+--
+ALTER TABLE `staff`
+  ADD PRIMARY KEY (`staff_ID`);
 
 --
 -- Constraints for dumped tables
