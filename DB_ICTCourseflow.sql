@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 19, 2024 at 01:45 PM
+-- Generation Time: Oct 09, 2024 at 09:22 AM
 -- Server version: 10.4.32-MariaDB
--- PHP Version: 8.0.30
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -169,6 +169,13 @@ CREATE TABLE `staff` (
   `email` varchar(255) DEFAULT NULL,
   `profile_image` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `staff`
+--
+
+INSERT INTO `staff` (`staff_ID`, `prefix`, `firstname`, `lastname`, `username`, `password`, `email`, `profile_image`) VALUES
+('80c0801d-d74a-44e9-a90c-23b9912bb288', 'นาย', 'แอดมิน', 'นะจ๊ะ', 'pawana', '$2a$10$50FuiRkRDGhSoTy4JgDFF.q6yvGd0pWSSEcn5urZyluYcFtpG7sIy', 'pawana@gmail.com', 'file-1728458276149.jpg');
 
 --
 -- Indexes for dumped tables
