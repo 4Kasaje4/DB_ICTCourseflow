@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2024 at 09:24 AM
+-- Generation Time: Oct 09, 2024 at 08:49 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -107,6 +107,36 @@ INSERT INTO `major` (`major_ID`, `name`, `curriculum_name`, `data_curriculum_ID`
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `off_hour_doc`
+--
+
+CREATE TABLE `off_hour_doc` (
+  `off_hour_doc_ID` varchar(255) NOT NULL,
+  `status` varchar(255) DEFAULT NULL,
+  `reasonCourseLeader` varchar(255) DEFAULT NULL,
+  `objective` varchar(255) DEFAULT NULL,
+  `numOfStudent` int(11) DEFAULT NULL,
+  `forStudentMajor` varchar(255) DEFAULT NULL,
+  `teacher` varchar(255) DEFAULT NULL,
+  `studyTime` varchar(255) DEFAULT NULL,
+  `oldRoom` varchar(255) DEFAULT NULL,
+  `newRoom` varchar(255) DEFAULT NULL,
+  `isCancelMidtermExam` tinyint(1) DEFAULT NULL,
+  `isCancelFinalExam` tinyint(1) DEFAULT NULL,
+  `cancelMidtermDate` varchar(255) DEFAULT NULL,
+  `cancelMidtermTime` varchar(255) DEFAULT NULL,
+  `cancelFinalDate` varchar(255) DEFAULT NULL,
+  `cancelFinalTime` varchar(255) DEFAULT NULL,
+  `reasonCancelExam` varchar(255) DEFAULT NULL,
+  `dateTimeSee` varchar(255) DEFAULT NULL,
+  `opencourse_ID` varchar(255) DEFAULT NULL,
+  `course_ID` varchar(255) DEFAULT NULL,
+  `major_ID` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `opencourse`
 --
 
@@ -123,6 +153,15 @@ CREATE TABLE `opencourse` (
   `professor_ID` varchar(255) NOT NULL,
   `course_ID` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `opencourse`
+--
+
+INSERT INTO `opencourse` (`openCourse_ID`, `numOfSection`, `numOfStudent`, `remark`, `isMidtermExam`, `isFinalExam`, `semster`, `education_year`, `teacher`, `professor_ID`, `course_ID`) VALUES
+('7e456864-76a6-44dd-a913-c3d988ca47d2', 3, 150, '-', 1, 1, 1, '2568', '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '227101'),
+('dae82c45-cca0-4fb4-9b9f-6ae04195a79a', 10, 200, '-', 1, 1, 2, '2570', '757658f2-b954-4699-be4d-2ed4a7f28a54', '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '227141'),
+('e20b2fd4-87ab-4dbe-aaa2-3d226f66e234', 5, 200, '-', 0, 0, 1, '2568', '2939b9ca-abdf-4221-a613-6f0e969ce215', '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '227102');
 
 -- --------------------------------------------------------
 
@@ -204,6 +243,15 @@ ALTER TABLE `major`
   ADD KEY `data_curriculum_ID` (`data_curriculum_ID`);
 
 --
+-- Indexes for table `off_hour_doc`
+--
+ALTER TABLE `off_hour_doc`
+  ADD PRIMARY KEY (`off_hour_doc_ID`),
+  ADD KEY `opencourse_ID` (`opencourse_ID`),
+  ADD KEY `course_ID` (`course_ID`),
+  ADD KEY `major_ID` (`major_ID`);
+
+--
 -- Indexes for table `opencourse`
 --
 ALTER TABLE `opencourse`
@@ -240,6 +288,14 @@ ALTER TABLE `course`
 --
 ALTER TABLE `major`
   ADD CONSTRAINT `major_ibfk_1` FOREIGN KEY (`data_curriculum_ID`) REFERENCES `data_curriculum` (`data_curriculum_ID`);
+
+--
+-- Constraints for table `off_hour_doc`
+--
+ALTER TABLE `off_hour_doc`
+  ADD CONSTRAINT `off_hour_doc_ibfk_1` FOREIGN KEY (`opencourse_ID`) REFERENCES `opencourse` (`openCourse_ID`),
+  ADD CONSTRAINT `off_hour_doc_ibfk_2` FOREIGN KEY (`course_ID`) REFERENCES `course` (`course_ID`),
+  ADD CONSTRAINT `off_hour_doc_ibfk_3` FOREIGN KEY (`major_ID`) REFERENCES `major` (`major_ID`);
 
 --
 -- Constraints for table `opencourse`
