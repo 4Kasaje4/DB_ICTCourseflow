@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 09, 2024 at 08:49 PM
+-- Generation Time: Oct 11, 2024 at 02:31 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -112,7 +112,7 @@ INSERT INTO `major` (`major_ID`, `name`, `curriculum_name`, `data_curriculum_ID`
 
 CREATE TABLE `off_hour_doc` (
   `off_hour_doc_ID` varchar(255) NOT NULL,
-  `status` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT '0',
   `reasonCourseLeader` varchar(255) DEFAULT NULL,
   `objective` varchar(255) DEFAULT NULL,
   `numOfStudent` int(11) DEFAULT NULL,
@@ -128,11 +128,23 @@ CREATE TABLE `off_hour_doc` (
   `cancelFinalDate` varchar(255) DEFAULT NULL,
   `cancelFinalTime` varchar(255) DEFAULT NULL,
   `reasonCancelExam` varchar(255) DEFAULT NULL,
+  `numOfSection` varchar(255) NOT NULL,
+  `year` varchar(255) NOT NULL,
+  `professor_ID` varchar(255) NOT NULL,
   `dateTimeSee` varchar(255) DEFAULT NULL,
   `opencourse_ID` varchar(255) DEFAULT NULL,
   `course_ID` varchar(255) DEFAULT NULL,
   `major_ID` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Dumping data for table `off_hour_doc`
+--
+
+INSERT INTO `off_hour_doc` (`off_hour_doc_ID`, `status`, `reasonCourseLeader`, `objective`, `numOfStudent`, `forStudentMajor`, `teacher`, `studyTime`, `oldRoom`, `newRoom`, `isCancelMidtermExam`, `isCancelFinalExam`, `cancelMidtermDate`, `cancelMidtermTime`, `cancelFinalDate`, `cancelFinalTime`, `reasonCancelExam`, `numOfSection`, `year`, `professor_ID`, `dateTimeSee`, `opencourse_ID`, `course_ID`, `major_ID`) VALUES
+('0d1dda01-acbc-4934-a84a-b315e8ae41ed', '0', NULL, '1', 11, NULL, '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '11', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '11', '11', '2939b9ca-abdf-4221-a613-6f0e969ce215', NULL, NULL, '227102', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('f2c1bccc-c135-4db7-8458-101f52b3e9f3', '0', NULL, '1', 11, NULL, '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '11', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '11', '11', '2939b9ca-abdf-4221-a613-6f0e969ce215', NULL, NULL, '227101', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('fd7f9f10-37bb-424d-ae9d-bb16861fdb08', '0', NULL, '1', 22, NULL, '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '22', '22', '2939b9ca-abdf-4221-a613-6f0e969ce215', NULL, NULL, '227322', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef');
 
 -- --------------------------------------------------------
 
