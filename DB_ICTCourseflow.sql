@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 11, 2024 at 02:31 PM
+-- Generation Time: Oct 15, 2024 at 08:27 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -81,7 +81,8 @@ CREATE TABLE `data_curriculum` (
 --
 
 INSERT INTO `data_curriculum` (`data_curriculum_ID`, `curriculum_year`, `isActive`) VALUES
-('58c72864-de72-47af-ac6a-9201746717c7', '2565', 1);
+('0837f49c-f3ec-493b-bf32-a8e578b46285', '2560', 1),
+('58c72864-de72-47af-ac6a-9201746717c7', '2565', 0);
 
 -- --------------------------------------------------------
 
@@ -121,6 +122,10 @@ CREATE TABLE `off_hour_doc` (
   `studyTime` varchar(255) DEFAULT NULL,
   `oldRoom` varchar(255) DEFAULT NULL,
   `newRoom` varchar(255) DEFAULT NULL,
+  `oldTime` varchar(255) NOT NULL,
+  `newTime` varchar(255) NOT NULL,
+  `oldSeat` varchar(255) NOT NULL,
+  `newSeat` varchar(255) NOT NULL,
   `isCancelMidtermExam` tinyint(1) DEFAULT NULL,
   `isCancelFinalExam` tinyint(1) DEFAULT NULL,
   `cancelMidtermDate` varchar(255) DEFAULT NULL,
@@ -131,6 +136,7 @@ CREATE TABLE `off_hour_doc` (
   `numOfSection` varchar(255) NOT NULL,
   `year` varchar(255) NOT NULL,
   `professor_ID` varchar(255) NOT NULL,
+  `choiceTeacher` int(11) NOT NULL,
   `dateTimeSee` varchar(255) DEFAULT NULL,
   `opencourse_ID` varchar(255) DEFAULT NULL,
   `course_ID` varchar(255) DEFAULT NULL,
@@ -141,10 +147,13 @@ CREATE TABLE `off_hour_doc` (
 -- Dumping data for table `off_hour_doc`
 --
 
-INSERT INTO `off_hour_doc` (`off_hour_doc_ID`, `status`, `reasonCourseLeader`, `objective`, `numOfStudent`, `forStudentMajor`, `teacher`, `studyTime`, `oldRoom`, `newRoom`, `isCancelMidtermExam`, `isCancelFinalExam`, `cancelMidtermDate`, `cancelMidtermTime`, `cancelFinalDate`, `cancelFinalTime`, `reasonCancelExam`, `numOfSection`, `year`, `professor_ID`, `dateTimeSee`, `opencourse_ID`, `course_ID`, `major_ID`) VALUES
-('0d1dda01-acbc-4934-a84a-b315e8ae41ed', '0', NULL, '1', 11, NULL, '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '11', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '11', '11', '2939b9ca-abdf-4221-a613-6f0e969ce215', NULL, NULL, '227102', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
-('f2c1bccc-c135-4db7-8458-101f52b3e9f3', '0', NULL, '1', 11, NULL, '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '11', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '11', '11', '2939b9ca-abdf-4221-a613-6f0e969ce215', NULL, NULL, '227101', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
-('fd7f9f10-37bb-424d-ae9d-bb16861fdb08', '0', NULL, '1', 22, NULL, '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '22', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '22', '22', '2939b9ca-abdf-4221-a613-6f0e969ce215', NULL, NULL, '227322', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef');
+INSERT INTO `off_hour_doc` (`off_hour_doc_ID`, `status`, `reasonCourseLeader`, `objective`, `numOfStudent`, `forStudentMajor`, `teacher`, `studyTime`, `oldRoom`, `newRoom`, `oldTime`, `newTime`, `oldSeat`, `newSeat`, `isCancelMidtermExam`, `isCancelFinalExam`, `cancelMidtermDate`, `cancelMidtermTime`, `cancelFinalDate`, `cancelFinalTime`, `reasonCancelExam`, `numOfSection`, `year`, `professor_ID`, `choiceTeacher`, `dateTimeSee`, `opencourse_ID`, `course_ID`, `major_ID`) VALUES
+('05d5d79b-e0d4-4529-b914-6dd747770554', '1', '', '4', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 1, 1, '2024-10-15', '12:00', '2024-10-18', '09:00', 'อาจารย์ติดภารกิจ', '', '', '757658f2-b954-4699-be4d-2ed4a7f28a54', 0, '1728973551180', 'fc28c548-89b3-4165-934a-1fef90187acd', NULL, NULL),
+('15a60011-1699-4ed3-960c-fc5877a974f0', '2', 'ห้อง ICT1102 ไม่ว่าง', '2', NULL, NULL, '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', NULL, 'ICT1103/1', 'ICT1102', '08.00 - 12.00', '13.00 - 17.00', '150', '200', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '2939b9ca-abdf-4221-a613-6f0e969ce215', 2, '1728973576076', 'b86323bf-44b2-4090-bf6b-839096d85a9e', NULL, NULL),
+('3f95a1e4-a993-4c9c-abc4-d44c6d75a63c', '0', NULL, '5', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '2939b9ca-abdf-4221-a613-6f0e969ce215', 0, NULL, NULL, '227101', NULL),
+('7bc374db-a875-42b6-b811-76a7bcb27fb4', '0', NULL, '1', 500, NULL, '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '08.00 - 12.00', NULL, NULL, '', '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '5', '2590', '2939b9ca-abdf-4221-a613-6f0e969ce215', 0, NULL, NULL, '227221', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('b16a8efe-5b0b-43a1-bcf9-81e4983a87bf', '0', NULL, '3', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '500', '1000', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '2939b9ca-abdf-4221-a613-6f0e969ce215', 0, NULL, '2d95aa0a-0e77-40fd-a963-8857a7db4db4', NULL, NULL),
+('d00374b7-9650-48e5-8871-4062fc746e8d', '0', NULL, '4', NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', '', 1, 1, '2024-10-30', '10:00', '2024-12-25', '17:00', '', '', '', '2939b9ca-abdf-4221-a613-6f0e969ce215', 0, NULL, '86270407-a923-4fd6-a14e-75a98c1fadfe', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -171,9 +180,14 @@ CREATE TABLE `opencourse` (
 --
 
 INSERT INTO `opencourse` (`openCourse_ID`, `numOfSection`, `numOfStudent`, `remark`, `isMidtermExam`, `isFinalExam`, `semster`, `education_year`, `teacher`, `professor_ID`, `course_ID`) VALUES
+('2158f867-56e7-43a4-8c72-aa8cf7eb570e', 2, 40, '-', 0, 1, 1, '2567', '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '227151'),
+('2d95aa0a-0e77-40fd-a963-8857a7db4db4', 5, 500, '', 0, 0, 1, '2590', '757658f2-b954-4699-be4d-2ed4a7f28a54', '2939b9ca-abdf-4221-a613-6f0e969ce215', '227422'),
 ('7e456864-76a6-44dd-a913-c3d988ca47d2', 3, 150, '-', 1, 1, 1, '2568', '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '227101'),
+('86270407-a923-4fd6-a14e-75a98c1fadfe', 2, 100, '', 1, 0, 1, '2590', '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '2939b9ca-abdf-4221-a613-6f0e969ce215', '227141'),
+('b86323bf-44b2-4090-bf6b-839096d85a9e', 3, 150, '', 1, 1, 1, '2590', '2939b9ca-abdf-4221-a613-6f0e969ce215', '2939b9ca-abdf-4221-a613-6f0e969ce215', '227101'),
 ('dae82c45-cca0-4fb4-9b9f-6ae04195a79a', 10, 200, '-', 1, 1, 2, '2570', '757658f2-b954-4699-be4d-2ed4a7f28a54', '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '227141'),
-('e20b2fd4-87ab-4dbe-aaa2-3d226f66e234', 5, 200, '-', 0, 0, 1, '2568', '2939b9ca-abdf-4221-a613-6f0e969ce215', '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '227102');
+('e20b2fd4-87ab-4dbe-aaa2-3d226f66e234', 5, 200, '-', 0, 0, 1, '2568', '2939b9ca-abdf-4221-a613-6f0e969ce215', '18561cf9-5904-41c8-ab4a-0de2e5ddc3db', '227102'),
+('fc28c548-89b3-4165-934a-1fef90187acd', 11, 111, '1', 1, 0, 1, '11', '757658f2-b954-4699-be4d-2ed4a7f28a54', '757658f2-b954-4699-be4d-2ed4a7f28a54', '227101');
 
 -- --------------------------------------------------------
 
@@ -200,9 +214,9 @@ CREATE TABLE `professor` (
 --
 
 INSERT INTO `professor` (`professor_ID`, `prefix`, `firstname`, `lastname`, `username`, `password`, `email`, `isCourseLeader`, `profile_image`, `phone`, `major_ID`) VALUES
-('18561cf9-5904-41c8-ab4a-0de2e5ddc3db', 'นาย', 'เกษมสันต์', 'แก้วจีน', 'kasaje', '$2b$10$iF107m2Us2IHVJO8wOI.S.kQ00t7nQ6lcC0bTLaVMbkHZ4GRVPAr2', 'kasaje@gmail.com', 1, 'file-1725728332177.png', '0979234192', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
-('2939b9ca-abdf-4221-a613-6f0e969ce215', 'นาย', 'ชินพัฒน์', 'ทรัพย์สำเริง', 'pech', '$2a$10$eP5E281veXIx//Mnca/ixeeK1JOCEKnfKGAXDwcWWLreR8XdrR/hW', 'pech@gmail.com', 0, 'file-1725728257328.png', '0987654324', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
-('757658f2-b954-4699-be4d-2ed4a7f28a54', 'นางสาว ', 'สุมิตตา', 'กิตติชัยฤทธิ์ ', 'guitar', '$2a$10$W/R2vOvUP.vtfsK8QPcQN.7aA0qWMb4ixRhucyf.qqw5y3pB3XR9.', 'guitar@gmail.com', 0, 'file-1725728557796.png', '', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef');
+('18561cf9-5904-41c8-ab4a-0de2e5ddc3db', 'นาย', 'เกษมสันต์', 'แก้วจีน', 'kasaje', '$2b$10$kVM51cJp/KOn821z2IwIt./7kiuOIlYfU26hwvZ7eTlHwzP.8pQyi', 'kasaje@gmail.com', 1, 'file-1728971883051.jpg', '0973585549', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('2939b9ca-abdf-4221-a613-6f0e969ce215', 'นาย', 'ชินพัฒน์', 'ทรัพย์สำเริง', 'pech', '$2a$10$eP5E281veXIx//Mnca/ixeeK1JOCEKnfKGAXDwcWWLreR8XdrR/hW', 'pech@gmail.com', 0, 'file-1728971952884.jpg', '0987654324', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef'),
+('757658f2-b954-4699-be4d-2ed4a7f28a54', 'นางสาว ', 'สุมิตตา', 'กิตติชัยฤทธิ์ ', 'guitar', '$2b$10$Pep74Y8x5MU2vbv4dv4ltuDAPghSD5sW7xUJStrebkpJtpBhrh07G', 'guitar@gmail.com', 0, 'file-1728973478138.jpg', '0610493381', 'f0bfbb3f-9fc6-4983-b3f9-f81bf30863ef');
 
 -- --------------------------------------------------------
 
@@ -227,7 +241,7 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`staff_ID`, `prefix`, `firstname`, `lastname`, `username`, `password`, `email`, `phone`, `profile_image`) VALUES
-('80c0801d-d74a-44e9-a90c-23b9912bb288', 'นาย', 'แอดมิน', 'นะจ๊ะ', 'pawana', '$2a$10$50FuiRkRDGhSoTy4JgDFF.q6yvGd0pWSSEcn5urZyluYcFtpG7sIy', 'pawana@gmail.com', '0988888888', 'file-1728458276149.jpg');
+('80c0801d-d74a-44e9-a90c-23b9912bb288', 'นาย', 'นพดล', 'คนเดินดิน', 'pawana', '$2a$10$50FuiRkRDGhSoTy4JgDFF.q6yvGd0pWSSEcn5urZyluYcFtpG7sIy', 'pawana@gmail.com', '0988888888', 'file-1728458276149.jpg');
 
 --
 -- Indexes for dumped tables
